@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8" />
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+	<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+	<script src="https://xpanda.info/lib/jquery/jquery-1.12.3.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+    	var ArticlePage = React.createClass({
+		  getInitialState: function() {
+		    return {
+		      username: ''
+		    };
+		  },
+		 
+		  componentDidMount: function() {
+		      var $react = this;
+			  $.ajax({
+			  	url: "https://xpanda.info/load",
+	    		type: "POST",
+	    		data: {
+	    			num: 1,
+					text: ''
+	    		},
+	    		async: true,
+	    		success:function(result){
+	    			console.log(result);
+					$react.setState({
+			        username: result
+			      });
+				}
+	    	});
+		  },
+		 
+		  componentWillUnmount: function() {
+
+		  },
+		 
+		  render: function() {
+		    return (
+		      <div>
+		        {this.state.username}
+		        </div>
+		    );
+		  }
+		});
+
+    	
+		ReactDOM.render(
+			<ArticlePage/>,
+			document.getElementById('example')
+		);
+    </script>
+  </body>
+</html>
