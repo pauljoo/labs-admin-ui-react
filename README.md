@@ -1,10 +1,12 @@
 ## 目录结构
 
-node_modules： 这里面包含了react项目中会用到的一些组件，install的时候下载下来的。
-public：里面包含了我们项目中的启动页面，react比较适合单页面项目应用开发，所以暂时只包含一个index.html，并且这也是react工程的入口页面。
-src：里面包含了一些我们自己使用的js文件，css文件，img文件等等。
+node_modules： 这里面包含了react项目中会用到的一些组件，install的时候下载下来的。  
 
+public：里面包含了我们项目中的启动页面，react比较适合单页面项目应用开发，所以暂时只包含一个index.html，并且这也是react工程的入口页面。  
 
+src：里面包含了一些我们自己使用的js文件，css文件，img文件等等。  
+
+```
 src/                 所有源代码存放的路径
   app.js             整个应用的入口
   views/             应用中某个页面的入口文件，一般为路由组件
@@ -30,3 +32,4 @@ src/                 所有源代码存放的路径
   utils/             工具函数、常量等
   styles/            全局公共样式
   app.css            应用主样式表
+```
